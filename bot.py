@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 import praw
 from datetime import datetime
 from dateutil.relativedelta import relativedelta
