@@ -15,7 +15,7 @@ reported_comments = []
 try:
     with open('reported_submissions.txt', 'r') as f:
         for line in f:
-            reported_submissions.append(line)
+            reported_submissions.append(line.strip())
 except FileNotFoundError:
     with open('reported_submissions.txt', 'w') as f:
         pass
@@ -23,7 +23,7 @@ except FileNotFoundError:
 try:
     with open('reported_comments.txt', 'r') as f:
         for line in f:
-            reported_comments.append(line)
+            reported_comments.append(line.strip())
 except FileNotFoundError:
     with open('reported_comments.txt', 'w') as f:
         pass
