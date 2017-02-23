@@ -14,10 +14,27 @@ client_secret=client_secret
 user_agent=user_agent
 ```
 
-Open bot.py and replace reddit = praw.Reddit('findareddit') with reddit = praw.Reddit('<config id>') 
-and subreddit = reddit.subreddit('findareddit') with the subreddit of your choice.
+Open bot.py and replace
 
-Change the global threshold variable to create a custom threshold for your posts.
+```python
+reddit = praw.Reddit('findareddit')
+```
+
+with
+
+```python
+reddit = praw.Reddit('<config id>') 
+```
+
+and
+
+```python
+subreddit = reddit.subreddit('findareddit')
+```
+
+with the subreddit of your choice.
+
+Change the global threshold variable to create a custom threshold for your bot.
 
 Please do not use this bot without the permission from that subreddit's moderators.
 
@@ -36,6 +53,15 @@ f.x. if you want it to be run every 30 minutes you would put
 ```
 30 * * * * * cd /FilePath/FindARedditBot; ./bot.py
 ```
+
+Make sure that bot.py is executable, you can do so with
+
+```
+chmod +x bot.py
+```
+
+while in the same directory.
+
 
 ## License
 
