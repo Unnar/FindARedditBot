@@ -41,7 +41,7 @@ Please do not use this bot without the permission from that subreddit's moderato
 ## Usage
 I recommend using cronjobs to make this bot run as frequently as you would like. 
 
-If you are on Linux, open bash and type
+If you are on Linux, open terminal and type
 
 ```bash
 crontab -e
@@ -51,7 +51,7 @@ This opens up a file where you can create a cronjob to be run every so often
 f.x. if you want it to be run every 30 minutes you would put
 
 ```
-30 * * * * * cd /FilePath/FindARedditBot; ./bot.py
+30 * * * * cd /FilePath/FindARedditBot; ./bot.py
 ```
 
 Make sure that bot.py is executable, you can do so with
