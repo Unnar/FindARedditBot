@@ -12,6 +12,8 @@ reported_submissions = []
 #List of reported comments
 reported_comments = []
 
+THRESHOLD = -3
+
 try:
     with open('reported_submissions.txt', 'r') as f:
         for line in f:
@@ -34,9 +36,9 @@ for submission in subreddit.new(limit=100):
     if datetime.utcnow() > (datetime.utcfromtimestamp(submission.created_utc) + relativedelta(hours=24)):
         #Submission is more than 24 hours old, no need to look further
         continue
-    elif submission.score <= -3:
+    elif submission.score <= THRESHOLD:
         print("-------------------")
-        print("Found post with score of negative 3 or less.")
+        print("Found post with score of {} or less.".format(THRESHOLD))
         print("Title: ", submission.title)
         print("-------------------")
         if submission.id in reported_submissions:
@@ -55,9 +57,9 @@ for comment in subreddit.comments(limit=100):
     if datetime.utcnow() > (datetime.utcfromtimestamp(comment.created_utc) + relativedelta(hours=24)):
         #Comment is more than 24 hours old, no need to look further
         break
-    if comment.score <= -3:
+    if comment.score <= THRESHOLD:
         print("-------------------")
-        print("Found comment with score of negative 3 or less.")
+        print("Found comment with score of {} or less.".format(THRESHOLD))
         print("Comment ID: ", comment.id)
         print("Comment body: ",comment.body)
         print("-------------------")
