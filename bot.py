@@ -56,7 +56,7 @@ print("Finished going through submissions, now sleeping before going through com
 time.sleep(5)
 print("Now going through comments")
 
-for comment in subreddit.comments(limit=100):
+for comment in subreddit.comments(limit=1000):
     if datetime.utcnow() > (datetime.utcfromtimestamp(comment.created_utc) + relativedelta(hours=24)):
         #Comment is more than 24 hours old, no need to look further
         break
