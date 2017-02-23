@@ -36,6 +36,9 @@ with the subreddit of your choice.
 
 Change the global threshold variable to create a custom threshold for your bot.
 
+### Requirements
+Note that this bot requires python3 and praw installed. 
+
 Please do not use this bot without the permission from that subreddit's moderators.
 
 ## Usage
