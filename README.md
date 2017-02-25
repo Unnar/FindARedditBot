@@ -6,7 +6,7 @@ If you would like to use this bot for your own subreddit then all you need to do
 this repository and create a praw.ini file with the following contents:
 
 ```ini
-[<config id>]
+[config id]
 username=username
 password=password
 client_id=client_id
@@ -23,7 +23,7 @@ reddit = praw.Reddit('findareddit')
 with
 
 ```python
-reddit = praw.Reddit('<config id>') 
+reddit = praw.Reddit('config id') 
 ```
 
 and
