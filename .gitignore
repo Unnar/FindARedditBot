@@ -1,4 +1,3 @@
 *.ini
 *.swp
-reported_submissions.txt
-reported_comments.txt
+*.txt

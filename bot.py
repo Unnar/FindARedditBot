@@ -47,13 +47,12 @@ for submission in subreddit.new(limit=100):
         if submission.id in reported_submissions:
             print("Submission has already been reported, continuing.")
             continue    
-        submission.report("Submission has a score of {}. Please investigate.\nI am a bot, if you believe this is an error please contact my creator /u/magicbicycle.".format(submission.score))
+        submission.report("Submission has a score of {}. Please investigate.".format(submission.score))
         with open('reported_submissions.txt', 'a') as f:
             f.write(submission.id+'\n')
         print("Submission has been reported and written to file.")
 
-print("Finished going through submissions, now sleeping before going through comments")
-time.sleep(5)
+print("Finished going through submissions")
 print("Now going through comments")
 
 for comment in subreddit.comments(limit=1000):
@@ -69,7 +68,7 @@ for comment in subreddit.comments(limit=1000):
         if comment.id in reported_comments:
             print("Comment has already been reported, continuing.")
             continue
-        comment.report("Comment has a score of {}. Please investigate.\nI am a bot, if you believe this is an error please contact my creator /u/magicbicycle.".format(comment.score))
+        comment.report("Comment has a score of {}. Please investigate.".format(comment.score))
         with open('reported_comments.txt', 'a') as f:
             f.write(comment.id+'\n')
         print("Comment has been reported and written to file.")
